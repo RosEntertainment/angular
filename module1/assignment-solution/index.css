@@ -1,3 +1,15 @@
 body {
     font-size: 1.3em;
 }
+
+.greenColorClass {
+    color: green;
+    border-color: green;
+    border-style: solid;
+}
+
+.redColorClass {
+    color: red;
+    border-color: red;
+    border-style: solid;
+}

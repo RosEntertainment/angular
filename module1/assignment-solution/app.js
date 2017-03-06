@@ -11,10 +11,12 @@
         $scope.lunchMessage = "";
 
         $scope.checkLunch = function () {
+            $scope.lunchMessageClass = "redColorClass";
             if ($scope.lunchItems === "") {
                 $scope.lunchMessage = "Please enter data first";
                 return;
             }
+            $scope.lunchMessageClass = "greenColorClass";
 
             var arrayOfStrings = removeEmptyItems($scope.lunchItems.split(","));
 
