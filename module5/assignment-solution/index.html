@@ -51,13 +51,13 @@
             <a ui-sref="public.menu">
               <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
           </li>
-          <li>
-            <a href="#">
-              <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> About</a>
+          <li ui-sref-active="active">
+            <a ui-sref="public.myInfo">
+              <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
           </li>
-          <li>
-            <a href="#">
-              <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Awards</a>
+          <li ui-sref-active="active">
+            <a ui-sref="public.signUp">
+              <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
           </li>
           <li id="phone" class="hidden-xs">
             <a href="tel:410-602-5008">
@@ -136,6 +136,12 @@
 <script src="src/public/menu-item/menu-item.component.js"></script>
 
 <!-- ADMIN SITE -->
+<script src="src/private/private.module.js"></script>
+<script src="src/private/sign-up.service.js"></script>
+<script src="src/private/sign-up/sign-up-custom-validation.directive.js"></script>
+<script src="src/private/sign-up/sign-up.controller.js"></script>
+<script src="src/private/my-info/my-info.controller.js"></script>
+
 
 <!--Application files -->
 

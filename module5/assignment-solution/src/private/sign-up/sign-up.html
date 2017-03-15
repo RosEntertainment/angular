@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="../../../css/signUp.css">
+
+<div class="container">
+    <h2 id="menu-categories-title" class="text-center">Sign Up form</h2>
+
+    <form name='regForm' novalidate>
+
+        <div class="formField">
+        <span class="labelSpan">
+            First Name
+        </span>
+            <input type="text" name="firstName" placeholder="First Name"
+                   ng-model="signUpCtrl.user.firstName"
+                   required>
+            <span ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">
+            First Name is mandatory
+        </span>
+        </div>
+
+        <div class="formField">
+        <span class="labelSpan">
+        Last Name
+        </span>
+            <input type="text" name="lastName" placeholder="Last Name"
+                   ng-model="signUpCtrl.user.lastName"
+                   required>
+            <span ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">
+        Last Name is mandatory
+        </span>
+        </div>
+
+        <div class="formField">
+        <span class="labelSpan">
+        Email Address
+        </span>
+            <input type="email" name="email" placeholder="Email Address"
+                   ng-model="signUpCtrl.user.email"
+                   required>
+            <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+        Must be a valid email address: handle@domain format
+        </span>
+        </div>
+
+        <div class="formField">
+        <span class="labelSpan">
+        Phone
+        </span>
+            <input type="text" name="phone" placeholder="Phone ###-###-####"
+                   ng-model="signUpCtrl.user.phone"
+                   pattern="(\d{3})-(\d{3})-(\d{4})">
+            <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+        </span>
+        </div>
+
+        <div class="formField">
+        <span class="labelSpan">
+            Favourite Menu Number
+        </span>
+            <input type="text" name="menuNumber" placeholder="Favourite Menu Number"
+                   ng-model="signUpCtrl.user.menuNumber" favourite-menu-number
+                   ng-model-options="{ updateOn: 'blur' }"
+                   required>
+            <span ng-if="regForm.menuNumber.$error.required && regForm.menuNumber.$touched">
+            Favourite Menu Number is mandatory
+        </span>
+            <span ng-if="regForm.menuNumber.$error.favouriteMenuNumber && regForm.menuNumber.$touched">
+            No such menu number exists
+        </span>
+        </div>
+
+        <div class="formField">
+            <button
+                    ng-disabled="regForm.$invalid"
+                    ng-click="signUpCtrl.submit()">Submit
+            </button>
+        </div>
+
+        <div ng-if="signUpCtrl.isUserLoggedIn">
+            Your information has been saved.
+        </div>
+
+    </form>
+</div>

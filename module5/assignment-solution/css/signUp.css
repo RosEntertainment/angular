@@ -1,0 +1,13 @@
+.labelSpan {
+    float: left;
+    width: 250px;
+}
+
+.formField {
+    margin-bottom: 10px;
+}
+
+.formField input {
+    color: black;
+    width: 200px;
+}

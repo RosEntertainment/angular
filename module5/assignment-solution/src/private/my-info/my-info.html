@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="../../../css/signUp.css">
+
+<div class="container">
+    <h2 id="menu-categories-title" class="text-center">My Info</h2>
+
+    <div ng-if="myInfoCtrl.isUserLoggedIn">
+        <div class="formField">
+        <span class="labelSpan">
+            First Name
+        </span>
+            {{myInfoCtrl.user.firstName}}
+        </div>
+
+        <div class="formField">
+        <span class="labelSpan">
+            Last Name
+        </span>
+            {{myInfoCtrl.user.lastName}}
+        </div>
+
+        <div class="formField">
+        <span class="labelSpan">
+            Email Address
+        </span>
+            {{myInfoCtrl.user.email}}
+        </div>
+
+        <div class="formField" ng-if="myInfoCtrl.user.phone">
+        <span class="labelSpan">
+            Phone
+        </span>
+            {{myInfoCtrl.user.phone}}
+        </div>
+
+        <div class="formField">
+        <span class="labelSpan">
+            Favourite Menu Number
+        </span>
+            {{myInfoCtrl.user.menuNumber.short_name}}
+        </div>
+
+        <div class="formField">
+        <span class="labelSpan">
+            Favourite Menu Title
+        </span>
+            {{myInfoCtrl.user.menuNumber.name}}
+        </div>
+
+        <div class="formField">
+        <span class="labelSpan">
+            Favourite Menu Description
+        </span>
+            {{myInfoCtrl.user.menuNumber.description}}
+        </div>
+
+
+        <div class="formField">
+            <span class="labelSpan">&nbsp </span>
+            <img class="img-responsive" width="250" height="150"
+                 ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.user.menuNumber.short_name}}.jpg"
+                 alt="{{myInfoCtrl.user.menuNumber.name}}">
+        </div>
+
+    </div>
+
+    <div ng-if="!myInfoCtrl.isUserLoggedIn">
+        Not Signed Up Yet.
+        <a ui-sref="public.signUp">
+            Sign up Now!
+        </a>
+    </div>
+
+</div>
